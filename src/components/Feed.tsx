@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from '@mui/material'
 import { Sidebar, Videos } from './'
 import { fetchFromAPI } from '../utils/fetchFromApi'
 
-interface ChannelSearchResult {
+export interface ChannelSearchResult {
     kind: 'youtube#searchResult';
     id: {
         kind: 'youtube#channel';
@@ -31,7 +31,7 @@ interface ChannelSearchResult {
     };
 }
 
-interface VideoSearchResult {
+export interface VideoSearchResult {
     kind: 'youtube#searchResult';
     id: {
         kind: 'youtube#video';
