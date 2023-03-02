@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Stack } from '@mui/material'
 import { VideoCard, ChannelCard } from './'
-import { SearchResult, VideoSearchResult, ChannelSearchResult } from './Feed';
+import { SearchResult, VideoSearchResult, ChannelSearchResult } from './../utils/types';
 
 interface Props {
     videos: SearchResult[];

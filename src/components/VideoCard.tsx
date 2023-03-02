@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 import { demoChannelTitle, demoChannelUrl, demoVideoTitle, demoVideoUrl, demoThumbnailUrl } from '../utils/Constants'
 import { VideoCardProps } from '../utils/types'
 
@@ -9,7 +9,7 @@ const VideoCard = ({ video }: VideoCardProps) => {
   const { id: { videoId }, snippet } = video
   console.log(videoId, snippet)
   return (
-    <Card sx={{ width: { md: '320px', xs: '100%' }, boxShadow: 'none', borderRadius: 0 }}>
+    <Card sx={{ width: '320px', boxShadow: 'none', borderRadius: 0 }}>
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           component="img"
