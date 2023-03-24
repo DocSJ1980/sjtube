@@ -4,19 +4,15 @@ import { VideoCard, ChannelCard } from './'
 import { SearchResult, VideoSearchResult, ChannelSearchResult } from './../utils/types';
 
 interface Props {
-    videos: SearchResult[];
+    videos: SearchResult[],
+    direction: 'row' | 'column',
 }
 
 
-const Videos = ({ videos }: Props) => {
+const Videos = ({ videos, direction }: Props) => {
     // console.log(videos)
     return (
-        <Stack
-            direction='row'
-            flexWrap='wrap'
-            justifyContent='center'
-            gap={2}
-        >
+        <Stack direction={direction || "row"} flexWrap="wrap" justifyContent="center" alignItems="start" gap={2}>
             {videos.map((video, idx) => (
                 <Box key={idx}>
                     {video.id.kind === 'youtube#video' && (
