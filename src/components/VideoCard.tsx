@@ -7,7 +7,7 @@ import { VideoCardProps } from '../utils/types'
 
 const VideoCard = ({ video }: VideoCardProps) => {
   const { id: { videoId }, snippet } = video
-  console.log(videoId, snippet)
+  // console.log(videoId, snippet)
   return (
     <Card sx={{ width: '320px', boxShadow: 'none', borderRadius: 0 }}>
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>

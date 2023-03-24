@@ -9,12 +9,12 @@ interface Props {
 
 
 const Videos = ({ videos }: Props) => {
-    console.log(videos)
+    // console.log(videos)
     return (
         <Stack
             direction='row'
             flexWrap='wrap'
-            justifyContent='start'
+            justifyContent='center'
             gap={2}
         >
             {videos.map((video, idx) => (
@@ -23,7 +23,7 @@ const Videos = ({ videos }: Props) => {
                         <VideoCard video={video as VideoSearchResult} />
                     )}
                     {video.id.kind === 'youtube#channel' && (
-                        <ChannelCard channelDetail={video as ChannelSearchResult} />
+                        <ChannelCard channelDetail={video as ChannelSearchResult} marginTop="0" />
                     )}
                 </Box>
             ))}
