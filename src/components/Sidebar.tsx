@@ -2,7 +2,12 @@ import React from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 import { categories } from '../utils/Constants'
 
-const Sidebar = ({ selectedCategory, setSelectedCategory }) => (
+type Props = {
+    selectedCategory: string;
+    setSelectedCategory: (category: string) => void;
+}
+
+const Sidebar = ({ selectedCategory, setSelectedCategory }: Props) => (
     <Stack direction="row"
         sx={{ overflowY: 'auto', height: { sx: 'auto', md: '95%' }, flexDirection: { sx: 'row', md: 'column' } }}
     >
@@ -11,7 +16,8 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => (
                 className='category-btn'
                 onClick={() => setSelectedCategory(category.name)}
                 style={{
-                    background: category.name === selectedCategory && '#FC1503', color: 'white'
+                    background: category.name === selectedCategory ? '#FC1503' : 'transparent',
+                    color: 'white'
                 }}
                 key={category.name}
             >

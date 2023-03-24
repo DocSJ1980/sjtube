@@ -7,7 +7,7 @@ import zIndex from '@mui/material/styles/zIndex'
 import { ChannelSearchResult, SearchResult } from '../utils/types'
 
 const ChannelDetail = () => {
-    const [channelDetail, setChannelDetail] = useState(null)
+    const [channelDetail, setChannelDetail] = useState();
     const [videos, setVideos] = useState([])
     const { id } = useParams<{ id: string }>()
     console.log(channelDetail)
@@ -25,7 +25,7 @@ const ChannelDetail = () => {
                     zIndex: 10,
                     height: '300px',
                 }} />
-                <ChannelCard channelDetail={channelDetail} marginTop="-120px" />
+                {channelDetail && <ChannelCard channelDetail={channelDetail} marginTop="-120px" />}
             </Box>
             <Box p={2} display="flex" >
                 <Box sx={{ mr: { sm: '100px' } }} />

@@ -6,9 +6,10 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { Videos, Loader } from "./";
 import { fetchFromAPI } from "../utils/fetchFromApi";
+import { VidDetail } from "../utils/types";
 
 const VideoDetail = () => {
-    const [videoDetail, setVideoDetail] = useState(null);
+    const [videoDetail, setVideoDetail] = useState<VidDetail | null>(null);
     const [videos, setVideos] = useState([]);
     const { id } = useParams();
 
@@ -19,9 +20,8 @@ const VideoDetail = () => {
         fetchFromAPI(`/search?part=snippet&relatedToVideoId=${id}&type=video`)
             .then((data) => setVideos(data.items))
     }, [id]);
-
+    // console.log("videoDetail:", videoDetail)
     if (!videoDetail?.snippet) return <Loader />;
-    console.log(videoDetail)
     const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
     return (
@@ -35,7 +35,8 @@ const VideoDetail = () => {
                         </Typography>
                         <Stack direction="row" justifyContent="space-between" sx={{ color: "#fff" }} py={1} px={2} >
                             <Link to={`/channel/${channelId}`}>
-                                <Typography variant={{ sm: "subtitle1", md: 'h6' }} color="#fff" >
+                                <Typography variant="subtitle1" color="#fff">
+                                    {/* <Typography variant={{ sm: "subtitle1", md: 'h6' }} color="#fff"> */}
                                     {channelTitle}
                                     <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
                                 </Typography>
