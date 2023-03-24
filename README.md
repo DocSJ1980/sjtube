@@ -2,6 +2,8 @@
 
 This is a full-fledged YouTube clone built using ReactJS and TypeScript. The clone uses the YouTube v3 API on RapidAPI. The app showcases basic React functionality using functional components and utilizes `useState` and `useEffect` hooks, `react-router-dom` and `useParams` hooks are used for routing. The app also uses Material-UI for various components and to produce beautiful layouts. It utilizes the YouTube v3 API on RapidAPI to fetch and display videos, channels, and playlists.
 
+![msedge_91mZePNvYz](https://user-images.githubusercontent.com/106554079/227558021-bfd9cf4f-88ce-42f8-8c14-0fc4b9d485a7.png)
+
 ## Features
 
 - Search for videos, channels, and playlists
@@ -42,4 +44,4 @@ This project was inspired by the tutorial from JS Mastery YouTube channel. Howev
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License.
